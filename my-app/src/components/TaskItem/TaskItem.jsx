@@ -1,14 +1,20 @@
 import { React } from "react";
 
-function TaskItem({ id, text }) {
+function TaskItem({ task, onToggle }) {
 
     return (
         <div>
-             <li id={id}>{text}</li>
-             <input type="checkbox"></input>
+             <input 
+                type="checkbox"
+                checked={task.done}
+                onChange={onToggle}
+             />
+            
+            <span>
+                {task.text}
+            </span>
+
         </div>
-       
-        
     )
 }
 
